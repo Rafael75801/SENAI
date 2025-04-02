@@ -1,0 +1,489 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt_br" lang="pt_br"><head><title>Time.is - hora certa em qualquer fuso horário</title><meta East>
+  <link rel="preconnect" href="https://a.pub.network/" crossorigin><link rel="preconnect" href="https://b.pub.network/" crossorigin><link rel="preconnect" href="https://c.pub.network/" crossorigin><link rel="preconnect" href="https://d.pub.network/" crossorigin><link rel="preconnect" href="https://c.amazon-adsystem.com" crossorigin><link rel="preconnect" href="https://s.amazon-adsystem.com" crossorigin><link rel="preconnect" href="https://btloader.com/" crossorigin><link rel="preconnect" href="https://api.btloader.com/" crossorigin><link rel="preconnect" href="https://cdn.confiant-integrations.net" crossorigin /><script data-cfasync="false">
+  AdP='FS';
+  
+  var freestar=freestar||{};
+  freestar.queue=freestar.queue||[];
+  freestar.config = freestar.config||{};
+  freestar.config.enabled_slots=[];
+  freestar.initCallback=function(){(freestar.config.enabled_slots.length===0)?freestar.initCallbackCalled=false:freestar.newAdSlots(freestar.config.enabled_slots)}
+  window.freestar.queue.push(function(){window.freestar.newVideo("FreeStarVideoAdContainer_Slider");});
+  </script>
+  <script src="https://a.pub.network/timeis/pubfig.min.js" data-cfasync="false" async></script>
+  <script>
+  ee4="B"
+  </script><script src="/js/7/jquery.ad.js"></script><script>
+  var updint=1000,U="undefined",N=null,E=true,F=!E,O="object",S="string",D=document,A=0,fc={a:0},bfc=1,uT="Time.is ",sT,tD,pY=lY=10,cY=syncn=rsy=0,ztrans=0,newzo=0,ss={"0326":"&uarr; 06:12 &darr; 18:13 (12h 1min)","0327":"&uarr; 06:12 &darr; 18:12 (12h 0min)"},destT=0,yrp="",csup=1,czo=0,rqT=0,syncT=0,syncquota=10,earliest_syncT=0,xR=1,syncm='',syncdt='',adH=110,mZ=64,ltr=1,ticks=0
+  function _tD(M){sT=M;tD=new Date().getTime()-M-Math.round(lY/2);cY=lY-pY;if(cY<10)cY=10}
+  _tD(1742984254235)
+  function gob(e){if(typeof e==O)return e;if(D.getElementById)return D.getElementById(e);return eval(e)}
+  function bluritem(e){e=gob(e);e.className=e.className.replace('focused','blr');bfc=1}
+  function focusitem(e){bfc=0;e=gob(e);e.className=e.className.replace('blr','focused');e.className=e.className.replace('submitted','focused')}
+  function mouseover(e){e.className=e.className.replace('mout','hovered')}
+  function mouseout(e){e.className=e.className.replace('hovered','mout')}
+  function setfocus(g){if(typeof fc[g]==U)fc[g]=1;else fc[g]++
+  if(fc['a']!=0&&fc['a']!=g)losefocus(fc['a'])
+  fc['a']=g;gob(g).className=gob(g).className.replace('hide','show');bfc=0}
+  function losefocus(g){if(fc['a']!=g)fc[g]=0;else{fc[g]--;if(fc[g]<1){fc['a']=0;fc[g]=0;gob(g).className=gob(g).className.replace('show','hide');bfc=1}}}
+  function changeclass(i,x,y){var o=gob(i);if(o)o.className=(o.className.replace(x,'')+' '+y).replace(/  +/,' ')}
+  
+  dmode=0
+  function setcookie(n,v){var x=new Date();x.setDate(x.getDate()+365);D.cookie=n+'='+encodeURIComponent(v)+';expires='+x.toGMTString()+';path=/'
+  if(D.cookie.length<1)csup=0}
+  function httpSync(){
+  nextSyncT=0
+  array_name='main'
+  xR=N
+  gob('syncH').innerHTML=p_syncing;gob('syncDtl').innerHTML='&nbsp;';gob('msgs').className=gob('msgs').className.replace('hdn','vsbl')
+  if(window.XMLHttpRequest)xR=new XMLHttpRequest()
+  else if(window.ActiveXObject)xR=new ActiveXObject("Microsoft.XMLHTTP")
+  if(xR!=N){
+  rqT=new Date()
+  czo=-rqT.getTimezoneOffset()
+  xR.onreadystatechange=s_C
+  if(typeof ee4==U)ee4='N'
+  xR.open('get','/t1/?'+l+'.'+syncn+'.'+lY+'.'+tD+'.'+rsy+'P.'+czo+'.'+locs[array_name][conf['h']][1]+'.'+rqT.getTime()+'.'+sT+'.'+yrp+'.'+ee4,E)
+  xR.send(N)
+  yrp=''
+  }else xR='N/A'
+  }
+  var Y=['','']
+  function s_C(){
+  var o,dots='...',sym=Y[0],syd=Y[1]
+  if(xR.readyState==4){
+  if(xR.status==200){
+  var rpT=new Date(),n=rpT-rqT,r=xR.responseText.split("\n")
+  sT=r[1]
+  var prevST=syncT
+  syncT=new Date()
+  syncT.setTime(syncT.getTime()-tD)
+  if(syncn===0||rsy||n<lY){if(r[0].length==13)r.unshift('ok');if(r.length<7||r[0]!=='ok'){
+  if(r[0].substr(0,6)=='error:')p_failm=r[0].substr(6)
+  else gob('msgs').className='w90 pulldowncv nonet'
+  hideTO=setTimeout('sync_cleanup(0)',4000)
+  }else{p_failm=p_fail
+  if(rsy&&(syncT-prevST<60000)){syncquota--
+  if(syncquota<0)earliest_syncT=new Date(syncT.getTime()+120000)
+  }else if(earliest_syncT==0)syncquota=10
+  }
+  rsy=0
+  lY=n
+  _tD(r[1])
+  
+  Y=T_I.initClock()
+  sym=Y[0]
+  syd=Y[1]
+  }
+  nextSyncT=new Date()
+  nextSyncT.setTime(nextSyncT.getTime()-tD+3600000)
+  if(49<cY&&syncn<1){for(var i=0;i<syncn;i++)dots+='.'
+  sym=p_syncing+dots
+  syd=''
+  syncn++
+  httpSync()}
+  else{o=gob('front_loc');if(o)o.style.visibility='visible'
+  ;o=gob('socbuttons');if(o)o.style.visibility='inherit'
+  }
+  if(syd=='')syd='&nbsp;'
+  for(i=5;i<r.length-1;i++)spdays[r[i].substr(0,4)]=r[i].substr(4,r[i].length)
+  if(zone_id!=='UTC'){// zone_offset=r[2];zone_id=r[3]
+  }
+  }else{sym=p_conn_failed
+  syd=xR.statusText
+  if(syd!='')syd=' ('+syd+')'
+  if(!A){if(xR.statusText!="")sym+=syd
+  syd='<a href="javascript:T_I.check_again()">'+p_try_again+'</a>'
+  nextSyncT=new Date()
+  nextSyncT.setTime(nextSyncT.getTime()-tD+360000)
+  }
+  }
+  gob('syncH').innerHTML=sym
+  gob('syncDtl').innerHTML=syd
+  var ac=gob('accuracy')
+  if(ac)ac.innerHTML=syd
+  setmsgH(0)
+  }}
+  function sg(q,sd){
+  T_I.set_susdiv(sd);o=gob(sd)
+  if((N!==q.match(/^Localidade \d+ \(opcional\)$/))||q=='Informe a localidade'||q=='Automático')return ''
+  q=q.replace(/ +$/,'').replace(/^ +/, '')
+  if(q.length<4)q=q.toLowerCase()
+  var n=sd.replace('susdiv','')
+  if((typeof complocurls!=U)&&(typeof complocurls[n]!=U)&&(complocurls[n][0]==q))return ''
+  if(typeof prevq[sd]!==U&&q==prevq[sd]||q==e_loc){o.className=o.className.replace('hide','show')
+  return ''}
+  if(q.length<1){o.innerHTML='';chosen_sus[sd]=0;prevq[sd]=q;current_q[sd]=q;return ''}
+  prevq[sd]=q
+  if(sus[q]){T_I.populate_sus(sd,q,1);return ''}
+  var xh=N,xhp=[]
+  if(window.XMLHttpRequest)xh=new XMLHttpRequest()
+  else if(window.ActiveXObject)xh=new ActiveXObject('Microsoft.XMLHTTP')
+  if(xh!=N){rqT=new Date()
+  xh.onreadystatechange=function(){if(xh.readyState==4)if(xh.status==200){
+  var xr=xh.responseText.split("\n"),st=xr.shift(),q1=xr.shift()
+  for(var i in xr){
+  if(i==='indexOf')break
+  xr[i]=xr[i].split('	')
+  }
+  sus[q1]=xr
+  if(typeof prevsustime[xhp['sd']]==U||prevsustime[xhp['sd']]<xhp['t']){prevsustime[xhp['sd']]=xhp['t'];T_I.populate_sus(xhp['sd'],xhp['q'],1)}}}
+  xhp['sd']=sd
+  xhp['t']=new Date()
+  if(q=='.')q='.a'
+  if(q=='..')q='.,'
+  xhp['q']=q
+  xh.open("get",'/s/'+l+'/'+q.length+'/'+encodeURIComponent(q.replace(/ /g,'_'))+'?'+xhp['t'].getTime(),E)
+  xh.send(N)
+  }else xh='N/A'
+  }
+  function arrows(sd,e){var k=e.which||e.keyCode
+  if(k==40||k==38)T_I.cycle_sus(sd,k-39)
+  else if(k==9||k==13)T_I.take_chosen(sd,k)
+  else return E
+  return F}
+  function togglesimple(x){var g='',c=bod.className
+  if(x!==0&&c.indexOf('simplify')!=-1){dmode=0;bod.className=c.replace('simplify','showall');x=1}
+  else if(x!==1&&c.indexOf('showall')!=-1){dmode=1;bod.className=c.replace('showall','simplify');x=0;g='none'}else x=''
+  if(x!==''){var gp=gob("___plusone_0");if(gp!=N)gp.style.display=g
+  setsizes(1);T_I.tick('',0)}}var kacs={f:"js:t_FS()",'.':"js:t_s()",sO:"/pt_br/customize",sS:"js:tl_a()",sC:"/pt_br/calendar",sD:"js:setcol((conf['c']*1+1)%2)",sJ:"/pt_br/clock",sM:"js:toggle_menu(2)",sT:"/pt_br/compare","-":"/pt_br/countdown",sU:"/pt_br/UTC",sZ:"js:change_clock_size()","$":"https://currency.world","?":"/pt_br/howto"}
+  handle_keys=function(ev){if(!bfc)return E
+  var i,u,e=ev||event,q,k=e.which||e.keyCode,s=e.shiftKey?'s':''
+  if(e.altKey||e.metaKey||e.ctrlKey)return E
+  q=String.fromCharCode(k)
+  if(q.toUpperCase()!==q.toLowerCase())q=s+q
+  if(typeof kacs[q]===S){u=kacs[q]
+  if(u.substr(0,3)=="js:")eval(u.substr(3))
+  else{if(u.substr(0,4)=="http")open(u,"_blank")
+  else location=u}return F}
+  
+  if(k===47||(96<k&&k<123)||(64<k&&k<91)){toggle_menu(0);t_search(1);if(k===47)return F}
+  i=locs.favs.length-k+48;if((48<k&&k<58)&&U!==typeof locs.favs[i]){location='/'+locs.favs[i][4];return F}
+  return E}
+  handle_arrow_keys=function(ev){
+  if(fc["a"]==1)return E
+  var e=ev||event,k=e.which||e.keyCode,s=e.shiftKey?'s':''
+  if(e.altKey||e.metaKey||e.ctrlKey)return E
+  if(k==27){toggle_menu(0);if(!t_search(0)){togglesimple(1);pstart=[];chosendayid=F;goto_this_year()}return F}
+  if(k==36){if(window.scrollY!==0)return E;location='/';return F}
+  if(bfc&&36<k&&k<41&&typeof kacs[s+k]===S){
+  var u=kacs[s+k]
+  if(u.substr(0,3)=="js:")eval(u.substr(3))
+  else location=u
+  return F
+  }
+  return E
+  }
+  function toggle_more(){
+  var t=gob('top'),cn='less'
+  if(t.className=='less')cn='more'
+  t.className=cn
+  set_mw()
+  }
+  D.onkeypress=this.handle_keys
+  D.onkeydown=this.handle_arrow_keys
+  </script>
+  <meta name="description" content="7 milhões de localidades, 58 idiomas, hora sincronizada com relógio atômico."><meta property="og:image" content="https://time.is/img/shareable/time_is_110011.png"><meta property="og:image" content="https://time.is/img/shareable/time_is_110011_dark.png"><meta property="og:image" content="https://time.is/img/shareable/time_is_with_milliseconds_110742.png"><meta property="og:image" content="https://time.is/img/shareable/time_is_with_milliseconds_110742_dark.png"><meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+  <link rel="image_src" href="/img/shareable/time_is_110011.png"><link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/img/apple-touch-icon_2021-11-20.png">
+  <link rel="search" type="application/opensearchdescription+xml" title="Time.is" href="/opensearch.xml">
+  <link rel="alternate" type="application/rss+xml" title="Time Zone News from Time.is" href="https://rss.time.is/time_zone_news.rss"><style>
+  *{margin:0;padding:0;border:0;outline:0}
+  div,h1,h2,h3,label,time{clear:both}
+  div,img,form{float:left}
+  #clock{float:left}
+  body{background:#fff}
+  span a,.nw,#clock{white-space:nowrap}
+  body,select,input,textarea{font:18px/26px 'Times New Roman',Times,FreeSerif,serif;color:#333;letter-spacing:2px}
+  #nav h3{letter-spacing:1px}
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Montserrat SemiBold'), local('Montserrat-SemiBold'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_bZF3gnD_g.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  /* latin-ext */
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wdhyzbi.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Montserrat Black'), local('Montserrat-Black'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_epG3gfD_u50.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+  }
+  /* latin */
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Montserrat Regular'), local('Montserrat-Regular'), url(https://fonts.gstatic.com/s/montserrat/v14/JTUSjIg1_i6t8kCHKm459Wlhyw.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: local('Montserrat Black'), local('Montserrat-Black'), url(https://fonts.gstatic.com/s/montserrat/v14/JTURjIg1_i6t8kCHKm45_epG3gnD_g.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+  }
+  @font-face{font-family:'TimeTraveler';font-style:normal;font-weight:400;src:url('/fonts/TimeTravelerPal-Normal-Regular.ttf') format('truetype')}
+  .mt #clock{font-family:'TimeTraveler',Arial,sans-serif}
+  #clock{font-size:100px;line-height:normal;position:relative;font-weight:bold}
+  #clock span{display:inline-block;text-align:center}
+  #clock0_bg{margin:40px 0}
+  div.lg a:link,div.lg a:visited{text-transform:uppercase;font-weight:600;font-size:16px;padding:20px 30px;letter-spacing:3px}
+  blockquote{font-weight:900}
+  #favs li .time span{display:inline-block;text-align:center;width:13px}
+  @media only screen and (max-width:639px){.mon{width:10px}}
+  @media only screen and (max-width:1024px){#clock0_bg{margin:30px 0}}
+  @media only screen and (max-width:768px){#clock0_bg{margin:20px 0}}
+  @media only screen and (max-width:400px){div.lg a:link,div.lg a:visited{font-size:14px;padding:15px 20px;letter-spacing:2px}}.divider{color:#ccc}
+  .lsp{float:right;color:#333}
+  .lsp ul{list-style:none;text-align:right}
+  a:link,a:visited{color:#333;text-decoration:none;border-bottom:1px solid #ccc}
+  h1,h2,.clockdate,.clockplace{font-size:36px;line-height:40px;font-weight:normal;letter-spacing:1px}
+  .w90{margin-left:5%;width:90%}
+  #c{padding-bottom:40px}
+  #msgdiv{float:left}
+  div#msgs h1{margin-right:30px;float:left}
+  .lg a:link,.lg a:visited{background:#c35;float:left;display:block;color:#fff;border:0;padding:20px;font:26px/20px Montserrat,Arial,sans-serif;font-weight:900;letter-spacing:2px}
+  .lg{z-index:9;position:relative}
+  #pl{display:none}
+  time{cursor:pointer;direction:ltr}
+  
+  #top{width:90%;margin:0 5%}
+  #clock0_bg{width:100%}
+  #clock0,.clockplace,#lC,.clockdate,#daydiv{text-align:right}
+  select{height:40px}
+  #pL a:link,#pL a:visited,#pL1 a,#lC,#daydiv,#daydiv1{color:#333}
+  
+  #pL,#pL1{margin-bottom:20px}
+  #favs{width:100%;list-style:none;margin:0 0 10px 0;padding:0;float:right}
+  #favs span{color:#999}
+  .tbx div{clear:none;float:left;text-align:left;white-space:nowrap;font-size:18px;line-height:22px;font-style:normal;font-weight:normal;letter-spacing:2px}
+  .tbx a{display:block;margin:0 0 10px 10px;padding:10px 20px;border:1px solid #eee;background:#eee;text-decoration:none}
+  .txtin,.dateinput{background:#eee;border:1px solid #ddd;width:138px;padding:10px;color:#333}
+  .mout{border-color:#eee}
+  </style><link rel="stylesheet" href="/css/t2025-03-16.css"><script src="/js/t2025-03-10.js"></script>
+  </head>
+  <body id="bdy" class="withA showall mt l "><div id="mainwrapper">
+  <div id="top">
+  <div class="lg"><h2><a href="https://time.is/pt_br/" target="_top" title="Time.is">Time.is</a></h2></div>
+  <div class="icon-nav tr">
+  <a href="#nav" onclick="return toggle_menu(1)" title="menu" id="menubutton">
+  <div style="margin-top:2px;width:100%;border-top-width:5px;padding:3px 0 2px 0;border-bottom-width:5px;margin-bottom:5px"></div>
+  <div style="width:100%;border-top-width:5px;padding:2px 0;margin-bottom:4px"></div>
+  </a>
+  </div>
+  <script>
+  function t_search(x){var qi=gob('q'),w=600
+  if(x){
+  scrollTo(0,0)
+  qi.focus()
+  if(ww<915)w=ww*.9-80
+  if(qi.value.indexOf('')!=-1)qi.value=qi.value.replace('','');setfocus('susdiv');sg(qi.value,'susdiv');focusitem(qi);if(dmode)bod.className=bod.className.replace('simplify','showall');gob('qbox').className='fcs'
+  }else{
+  if(gob('qbox').className!=='fcs')return F;
+  qi.blur()
+  w=0
+  if(ww<915)w=0
+  if(ww<641||Tstate.current_page=='Unix_time')w=0
+  if(qi.value==='')qi.value=''
+  losefocus('susdiv')
+  bluritem(qi)
+  if(dmode)bod.className=bod.className.replace('showall','simplify')
+  setTimeout("gob('qbox').className=''",200)
+  }
+  return E}
+  </script>
+  <form id="qbox" class="tr" action="/pt_br/" method="get" autocomplete="off" accept-charset="UTF-8" onsubmit="return T_I.submit(gob('q').value)">
+  <input type="text" id="q" name="q" value="" tabindex="1" maxlength="100" accesskey="3" class="txtin blr mout"
+  onfocus="t_search(1)"
+  onblur="t_search(0)"
+  onmouseover="mouseover(this)" onmouseout="mouseout(this)"
+  onkeydown="arrows('susdiv',event)"
+  onkeyup="sg(this.value,'susdiv')"/>
+  <div id="susdiv" class="susdiv" onmouseover="setfocus('susdiv')" onmouseout="losefocus('susdiv')"></div>
+  </form>
+  
+  <div id="user" class="tr"><a href="/pt_br/log_in" title="sign up or log in"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+  <path d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"/></svg></a></div><div id="toppromotion" class="tr" style="position:absolute;top:15px;right:170px"><a href="/pt_br/ad-free">Get Time.is Ad-free!</a></div>
+  </div><div id="time_section" class="w1"><div id="msgs" class="tr w90 vsbl"><div id="msgdiv"><h1 id="syncH" style="float:left">Hora certa:</h1></div><div id="syncDtl" class="w1">&nbsp;</div><div id="front_loc" class="w1" style="visibility:hidden">Hora em <a href="São_Paulo" itemscope itemtype="http://schema.org/City"><span itemprop="name">São Paulo</span>, Brasil</a> agora:</div></div><div style="width:100%;position:relative"><div id="clock0_bg" onclick="clockclick(event)"><time id="clock">07:17:34</time></div></div><noscript><h2 class="w90 error">Ative o JavaScript no seu browser para que o relógio seja atualizado automaticamente.</h2></noscript><div id="dd" class="w90 tr clockdate" onclick="location='/pt_br/calendar'" title="Clique para o calendário">quarta-feira, 26 de março de 2025, semana 13</div><div id="daydiv" class="w90 tr"><a href="https://en.wikipedia.org/wiki/Bangladeshi_Independence_Day">Independence Day (Bangladesh)</a></div><div id="lC" class="w90 tr"><span id="locw">Sol: <span id="sun" class="nw">&uarr; 06:12 &darr; 18:13 (12h 1min)</span> - <a href="São_Paulo#time_zone">Mais informações</a></span> - <a href="/pt_br/h/349e77" rel="nofollow"><span>Tornar São Paulo localidade padrão</span></a> - <a href="." onclick="if(confirm('Remover São Paulo das localidades preferidas?')){conf['b']='.'+conf['b']+'.';if(-1!=conf['b'].indexOf('.349e77.'))conf['b']=conf['b'].replace('.349e77.', '.');conf['b']=conf['b'].substr(1,conf['b'].length-2);delete conf['a'];T_I.recook();location='/pt_br/';}return false" rel="nofollow"><span>Remover das localidades preferidas</span></a>
+  </div><div class="w90 tr"><ul id="favs" class="tbx collapsible"><li><a href="/pt_br/Tokyo" id="time-0">Tóquio<br><span id="favt0">19:17</span></a></li><li><a href="/pt_br/Beijing" id="time-1">Pequim<br><span id="favt1">18:17</span></a></li><li><a href="/pt_br/Paris" id="time-2">Paris<br><span id="favt2">11:17</span></a></li><li><a href="/pt_br/London" id="time-3">Londres<br><span id="favt3">10:17</span></a></li><li><a href="/pt_br/São_Paulo" id="time-4" class="chosen">São Paulo<br><span id="favt4">07:17</span></a></li><li><a href="/pt_br/New_York" id="time-5">Nova Iorque<br><span id="favt5">06:17</span></a></li></ul><div id="favsXpandr" style="float:right"><a href="#" onclick="return expand_favs()">mais</a></div></div><div id="recover" style="width:100%"><div class="tr" style="width:90%;padding:0 5% 20px 5%"><div class="fst" style="float:right"><div data-freestar-ad="__300x250" id="time.is_300x250_ATF3"></div>
+  <div data-freestar-ad="__336x280" id="time.is_billboard"></div>
+  <script data-cfasync="false">
+  freestar.config.enabled_slots.push({placementName:"time.is_billboard",slotId:"time.is_billboard"})
+  freestar.config.enabled_slots.push({placementName:"time.is_300x250_ATF3",slotId:"time.is_300x250_ATF3"})
+  </script></div><div style="float:right"><a href="/pt_br/ad-free">Remove the ads? Get Time.is Ad-free!</a></div></div></div>
+  </div>
+  <script>
+  bod=gob('bdy')
+  var l='pt_br',conf={d:'%l, %j de %F de %Y, %W',t:'H:i:s',f:'mt',c:'2',o:'',z:'0.8',a:'1',b:'4e4185.28571f.2d99db.1bb85e.1c3b23.349e77',w:'1',v:'20250326',h:0,i:'.8',Z:'0.8',m:'',u:''},locs={favs:[['1850147','444','Tóquio','Tóquio, Japão','Tokyo','35,68950','139,69171','8.336.599',''],['1816670','43d','Pequim','Pequim, China','Beijing','39,90750','116,39723','18.960.744',''],['2988507','71f','Paris','Paris, França','Paris','48,85341','2,34880','2.138.551',''],['2643743','716','Londres','Londres, Reino Unido','London','51,50853','-0,12574','8.961.989',''],['3448439','17b','São Paulo','São Paulo, Brasil','São_Paulo','-23,54750','-46,63611','12.400.232',''],['5128581','161','Nova Iorque','Nova Iorque, EUA','New_York','40,71427','-74,00597','8.804.190','10']],main:[['3448439','17b','São Paulo','São Paulo, Brasil','São_Paulo','-23,54750','-46,63611','12.400.232','']]},zones={'17b':['America/Sao_Paulo','-03',[-180]],'444':['Asia/Tokyo','JST',[540]],'43d':['Asia/Shanghai','CST',[480]],'71f':['Europe/Paris','CET',[60,1743296400,120]],'716':['Europe/London','GMT',[0,1743296400,60]],'161':['America/New_York','EDT',[-240,1762063200,-300]]},
+  susdest='/pt_br/'
+  zone_id='America/Sao_Paulo',Tstate={chosen_loc:4,current_page:"specific_location"};
+  zone_code='clientside'
+  zone_offset=-new Date().getTimezoneOffset()
+  zones['clientside']=['','',[zone_offset]]
+  
+  days=["domingo","segunda-feira","terça-feira","quarta-feira","quinta-feira","sexta-feira","sábado"]
+  daysh=["dom","seg","ter","qua","qui","sex","sáb"]
+  daysI=["D","S","T","Q","Q","S","S"]
+  months=["janeiro","fevereiro","março","abril","maio","junho","julho","agosto"," setembro","outubro","novembro","dezembro"]
+  monthsh=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"]
+  p_exactt="Sua hora está certa!"
+  p_t_is="O horário correto é:"
+  p_w="semana "
+  p_wn="semana %n"
+  p_d="dia"
+  p_ds=" dias"
+  p_h=" hora"
+  p_hs=" horas"
+  p_m=" minuto"
+  p_ms=" minutos"
+  p_s=" segundo"
+  p_ss=" segundos"
+  p_ss_short=" s"
+  p_ur_late="Seu relógio está %t atrasado."
+  p_ur_early="Seu relógio está %t adiantado."
+  p_acc="A precisão da sincronização foi de ±%t."
+  p_acc_short="Precisão sinc.: ±%t"
+  p_last_s="Última sincronização: %t"
+  p_last_s_short="Última sinc: %t"
+  p_dec_sym=","
+  p_and=" e "
+  p_time_diff="A diferença do seu relógio para o Time.is foi de %t (±%D). "
+  p_time_diff_short="Dif.: %t (±%D) "
+  p_failh="A sincronização falhou. "
+  p_fail="Não se pode obter a devida precisão porque sua conexão ou computador estão lentos ou ocupados. "
+  p_syncing="Sincronizando"
+  p_conn_failed="Não foi possível conectar com o servidor."
+  p_try_again="Tentar novamente?"
+  p_no_match="Sem correspondência"
+  p_no_au="Desculpe, você precisa de uma versão recente do Firefox, Opera ou Safari para ouvir o som!"
+  p_no_cookie_support="error_no_cookie_support"
+  p_td="Hoje"
+  e_loc="Informe a localidade"
+  p_time_remaining="Tempo restante: %t"
+  p_time_since="Tempo decorrido: %t"
+  
+  p_now='agora'
+  p_yesterday='ontem'
+  p_tomorrow='amanhã'
+  p_today='hoje'
+  p_in_n='daqui a %n'
+  p_ago='%n atrás'
+  p_In_x_days='Em %n %days'
+  p_x_days_ago='%n %days atrás'
+  p_x_days_before='%n %days antes de %other_date'
+  p_x_days_after='%n %days depois de %other_date'
+  
+  p_today_date='[Hoje]: %d'
+  units=[p_ss,p_ms,p_hs,p_ds],units_sing=[p_s,p_m,p_h,' '+p_d]
+  
+  p_enter_loc='Informe a localidade'
+  
+  p_default_time_format='H:i:s'
+  p_date_formats=['%l, %j de %F de %Y, %W',
+  '%l, %d/%m/%y, %W',
+  '%l, %d/%m/%y',
+  '%Y-%m-%d']
+  
+  
+  spdays={'0326':'<a target="_blank" href="https://en.wikipedia.org/wiki/Bangladeshi_Independence_Day">Independence Day (Bangladesh)</a>','0327':'<a target="_blank" href="https://www.world-theatre-day.org/">World Theatre Day</a>'}
+  noctp=1;adheight=0;;show_big_clock=1;force24=0;beginning_of_time()
+  onresize=function(){setsizes(2)}
+  </script>
+  </div><section id="top_cities_tmp"><div class="cloud w90 d"><a href="Abu_Dhabi" class="s14">Abu Dabi</a> <a href="Addis_Ababa" class="s9">Adis Abeba</a> <a href="Amsterdam" class="s14">Amsterdã</a> <a href="Amman" class="s12">Amã</a> <a href="Antananarivo" class="s12">Antananarivo</a> <a href="Athens" class="s14">Atenas</a> <a href="Auckland,_New_Zealand" class="s15">Auckland</a> <a href="Baghdad" class="s7">Bagdá</a> <a href="Bangkok" class="s7">Banguecoque</a> <a href="Barcelona,_Spain" class="s11">Barcelona</a> <a href="Beirut" class="s11">Beirute</a> <a href="Berlin" class="s10">Berlim</a> <a href="Bogotá" class="s6">Bogotá</a> <a href="Boston" class="s14">Boston</a> <a href="Brussels" class="s13">Bruxelas</a> <a href="Buenos_Aires" class="s3 bold">Buenos Aires</a> <a href="Cairo" class="s6">Cairo</a> <a href="Guangzhou" class="s8">Cantão</a> <a href="Caracas" class="s8">Caracas</a> <a href="Karachi" class="s2 bold">Carachi</a> <a href="Kathmandu" class="s11">Catmandu</a> <a href="Chicago" class="s5 bold">Chicago</a> <a href="Cape_Town" class="s8">Cidade do Cabo</a> <a href="Mexico_City" class="s1 bold">Cidade do México</a> <a href="Dhaka" class="s4 bold">Daca</a> <a href="Damascus" class="s11">Damasco</a> <a href="Delhi" class="s2 bold">Deli</a> <a href="Dubai" class="s4 bold">Dubai</a> <a href="Dublin" class="s13">Dublin</a> <a href="Stockholm" class="s12">Estocolmo</a> <a href="Frankfurt" class="s14">Frankfurt am Main</a> <a href="Hanoi" class="s12">Hanói</a> <a href="Havana" class="s10">Havana</a> <a href="Helsinki" class="s15">Helsínquia</a> <a href="Hong_Kong" class="s4 bold">Hong Kong</a> <a href="Honolulu" class="s16">Honolulu</a> <a href="Istanbul" class="s2 bold">Istambul</a> <a href="Jakarta" class="s5 bold">Jakarta</a> <a href="Kuala_Lumpur" class="s11">Kuala Lumpur</a> <a href="Kyiv" class="s9">Kyiv</a> <a href="Lagos" class="s5 bold">Lagos</a> <a href="Las_Vegas" class="s15">Las Vegas</a> <a href="Lima" class="s6 bold">Lima</a> <a href="London" class="s1 bold">Londres</a> <a href="Los_Angeles" class="s1 bold">Los Angeles</a> <a href="Luanda" class="s9">Luanda</a> <a href="Madrid" class="s8">Madrid</a> <a href="Manila" class="s3 bold">Manila</a> <a href="Mecca" class="s12">Meca</a> <a href="Miami" class="s16">Miami</a> <a href="Milan" class="s13">Milão</a> <a href="Moscow" class="s2 bold">Moscovo</a> <a href="Mumbai" class="s3 bold">Mumbai</a> <a href="New_Delhi" class="s16">Nova Deli</a> <a href="New_York" class="s1 bold">Nova Iorque</a> <a href="Nuuk" class="s16">Nuuk</a> <a href="Osaka" class="s9">Osaka</a> <a href="Oslo" class="s15">Oslo</a> <a href="Paris" class="s3 bold">Paris</a> <a href="Beijing" class="s1 bold">Pequim</a> <a href="Prague" class="s13">Praga</a> <a href="Kinshasa" class="s5 bold">Quinxassa</a> <a href="Yangon" class="s7">Rangum</a> <a href="Reykjavik" class="s16">Reiquiavique</a> <a href="Riyadh" class="s8">Riade</a> <a href="Rio_de_Janeiro" class="s6">Rio de Janeiro</a> <a href="Rome" class="s10">Roma</a> <a href="Santiago" class="s7">Santiago do Chile</a> <a href="Seoul" class="s4 bold">Seul</a> <a href="Shenzhen" class="s9">Shenzhen</a> <a href="Singapore" class="s4 bold">Singapura</a> <a href="Sydney" class="s4 bold">Sydney</a> <a href="San_Francisco" class="s13">São Francisco</a> <a href="São_Paulo" class="s2 bold">São Paulo</a> <a href="Saint_Petersburg" class="s7">São Petersburgo</a> <a href="Taipei" class="s5 bold">Taipé</a> <a href="Tehran" class="s6">Teerã</a> <a href="Tel_Aviv" class="s13">Tel Aviv</a> <a href="Toronto" class="s7">Toronto</a> <a href="Tokyo" class="s1 bold">Tóquio</a> <a href="Vancouver" class="s10">Vancôver</a> <a href="Warsaw" class="s10">Varsóvia</a> <a href="Vienna" class="s10">Viena</a> <a href="Washington,_D.C." class="s15">Washington, D.C.</a> <a href="Shanghai" class="s3 bold">Xangai</a> <br>
+  <br>
+  <a class="s6" href="UTC">UTC</a>
+  <a class="s6" href="GMT">GMT</a>
+  <a class="s6" href="CET">CET</a><br>
+  <a class="s6" href="PT">Pacific Time</a>
+  <a class="s6" href="MT">Mountain Time</a>
+  <a class="s6" href="CT">Central Time</a>
+  <a class="s6" href="ET">Eastern Time</a>
+  <a class="s6" href="China_Standard_Time">China Standard Time</a>
+  <a class="s6" href="IST">India Standard Time</a>
+  </div><div style="display:flex;justify-content:center;width:100%;margin-top:20px;height:250px">		<div style="position:relative;float:left">
+  <div style="float:left;clear:none" 
+   data-freestar-ad="__300x250" id="time.is_homepage_300x250">
+  <script data-cfasync="false">
+  freestar.config.enabled_slots.push({ placementName: "time.is_homepage_300x250", slotId: "time.is_homepage_300x250" });
+  </script>
+  </div>
+  <div style="margin-left:20px;float:left;clear:none" 
+   data-freestar-ad="__300x250" id="time.is_homepage_300x250_2">
+  <script data-cfasync="false">
+  freestar.config.enabled_slots.push({ placementName: "time.is_homepage_300x250_2", slotId: "time.is_homepage_300x250_2" });
+  </script></div></div></div><div id="freestar-video-desktop"></div><div id="freestar-video-mobile"></div></section><section id="quote"><blockquote>"You must have been warned against letting the golden hours slip by; but some of them are golden only because we let them slip by."</blockquote><cite>J.M. Barrie</cite></section><div id="menupositioner">
+  <div id="close-menu" class="close-btn" onclick="toggle_menu(0)">×</div>
+  <div id="menutransformer">
+  
+  <nav id="nav">
+  <div>
+  <h3><a href="/" class="logo">Time.is</a> <span class="slogan"><span>- </span>hora exata em qualquer fuso horário</span></h3>
+  
+  <div id="menulinks"><ul><li class="chosen"><a href="/pt_br/">Hora certa</a></li><li><a href="/pt_br/compare">Hora aqui&amp;ali</a></li><li><a href="/pt_br/your_time_zone">Your time zone</a></li><li><a href="/pt_br/time_zones">Fusos horários</a></li><li><a href="/pt_br/DST_2025">Horário de Verão</a></li><li><a href="/pt_br/clock">Só a hora</a></li><li><a href="/pt_br/countdown">Temporizador</a></li><li><a href="/pt_br/calendar">Calendário</a></li><li><a href="/pt_br/compact_calendar">Compact calendar</a></li><li><a href="/pt_br/week">Week number</a></li><li id="aub"><a href="sound">Som</a></li></ul><ul><li><a href="/pt_br/apps">Apps</a></li><li><a href="/pt_br/widgets">Widgets</a></li><li><a href="/pt_br/time_zone_news">Notícias relacionadas</a></li><li><a href="/pt_br/mailing_list">Newsletter</a></li></ul><ul><li><a href="/pt_br/UTC">UTC</a></li><li><a href="/pt_br/Unix_time">Relógio Unix</a></li><li><a href="/pt_br/Unix_time_converter">Conversor de hora Unix</a></li></ul><ul><li><a href="/pt_br/customize">Personalizar</a></li><li><a href="/pt_br/ad-free">Time.is Ad-free</a></li><li><a href="/pt_br/FAQ">FAQ</a></li><li><a href="/pt_br/howto">How to use Time.is</a></li><li><a href="/pt_br/about">Sobre</a></li><li><a href="/pt_br/contact">Contato</a></li></ul><ul><li><a href="/pt_br/advertise">Propaganda</a></li><li><a href="/pt_br/terms_of_use">Terms of use</a></li><li><a href="/pt_br/terms_of_use#privacy_policy">Política de privacidade</a></li></ul></div></div>
+  <div id="follow_app">
+  <div id="appbadge"><a href="/jump/ipadapp_footer"><img src="/img/app_store_badge/Download_on_the_App_Store_Badge_PTBR_135x40.svg" alt="Download on the App Store"></a></div>
+  </div>
+  </nav>
+  <script>
+  place_badges()
+  </script>
+  <footer id="footer"><nav></nav>
+  <div>
+  Time.is exibe a hora exata, de acordo com o relógio atômico oficial para qualquer fuso horário (mais de 7 milhões de localidades) em 58 idiomas.<br>
+  </div>
+  <div id="footerlangs">
+  <a href="/?lang=en" title="English">What time is it?</a>
+  <a href="/?lang=zh" title="Chinese (simplified) / 中文">几点了？</a>
+  <a href="/?lang=hi" title="Hindi / हिंदी">क्या समय हुआ है?</a>
+  <a href="/?lang=es" title="Spanish / español">¿Qué hora es?</a>
+  <a href="/?lang=fr" title="French / français">Quelle heure est-il ?</a>
+  <a href="/?lang=ar" title="Arabic / العربية">كم الساعة</a>
+  <a href="/?lang=bn" title="Bengali / বাংলা">এখন কয়টা বাজে?</a>
+  <a href="/?lang=ru" title="Russian / русский">Который час?</a>
+  <a href="/?lang=pt_br" title="Portuguese (Brazil) / português (Brasil)">Que horas são?</a>
+  <a href="/?lang=id" title="Indonesian / bahasa Indonesia">Jam berapa?</a>
+  <a href="/?lang=de" title="German / Deutsch">Wieviel Uhr ist es?</a>
+  <a href="/?lang=ja" title="Japanese / 日本語">今何時ですか？</a>
+  <a href="https://saatkac.info.tr/" title="Turkish / Türkçe">Saat kaç?</a>
+  <a href="/?lang=ta" title="Tamil / தமிழ்">என்ன நேரம்?</a>
+  <a href="/?lang=ur" title="Urdu / اردو زبان">؟ےہ اوہ تقو ایک</a>
+  <a href="/languages">&gg; more languages</a>
+  </div>
+  </footer>
+  </div>
+  </div><script>setcookie("rcovr",ee4)
+  </script><script>
+  window._qevents=window._qevents||[];
+  (function(){
+  var elem=document.createElement('script');
+  elem.src=(document.location.protocol=="https:"?"https://secure":"http://edge")+".quantserve.com/quant.js";
+  elem.async=true
+  elem.type="text/javascript"
+  var scpt=document.getElementsByTagName('script')[0]
+  scpt.parentNode.insertBefore(elem, scpt)
+  })();
+  window._qevents.push({
+  qacct:"p-4TE0mgHmkNwB-",
+  uid:"__INSERT_EMAIL_HERE__"
+  })
+  </script>
+  <noscript>
+  <div style="display:none">
+  <img src="//pixel.quantserve.com/pixel/p-4TE0mgHmkNwB-.gif" style="height:1px;width:1px" alt="Quantcast"/>
+  </div>
+  </noscript></body>
